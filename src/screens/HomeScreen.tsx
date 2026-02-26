@@ -1,24 +1,22 @@
-import React from 'react';
+import React from "react";
 import {
-  View,
-  Text,
   Image,
-  ScrollView,
-  StyleSheet,
-  StatusBar,
   SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
   useWindowDimensions,
-} from 'react-native';
+  View,
+} from "react-native";
+
+// Province Information
+const provinceName = "อุตรดิตถ์";
+const provinceMotto =
+  "เหล็กน้ำพี้ลือเลื่อง เมืองลางสาดหวาน บ้านพระยาพิชัยดาบหัก ถิ่นสักใหญ่ของโลก";
 
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
-
-  // Province Information
-  const provinceName = 'อุตรดิตถ์';
-  const provinceMotto =
-    'เหล็กน้ำพี้ลือเลื่อง เมืองลางสาดหวาน บ้านพระยาพิชัยดาบหัก ถิ่นสักใหญ่ของโลก';
-  const provinceSealUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Seal_Uttaradit.png/220px-Seal_Uttaradit.png';
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -31,12 +29,11 @@ export default function HomeScreen() {
         <View style={styles.heroSection}>
           <View style={styles.heroOverlay} />
           <Image
-            source={{ uri: provinceSealUrl }}
+            source={require("../../assets/Uttaradit_Seal.png")}
             style={styles.provinceSeal}
             resizeMode="contain"
           />
           <Text style={styles.provinceName}>{provinceName}</Text>
-          <Text style={styles.englishName}>Uttaradit Province</Text>
         </View>
 
         {/* Motto Section */}
@@ -84,9 +81,7 @@ export default function HomeScreen() {
             </View>
             <View style={styles.infoContent}>
               <Text style={styles.infoTitle}>ประชากร</Text>
-              <Text style={styles.infoDescription}>
-                ประมาณ 460,000 คน
-              </Text>
+              <Text style={styles.infoDescription}>ประมาณ 460,000 คน</Text>
             </View>
           </View>
         </View>
@@ -132,60 +127,60 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+    backgroundColor: "#F8F9FA",
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+    backgroundColor: "#F8F9FA",
   },
   scrollContent: {
     paddingBottom: 30,
   },
   heroSection: {
-    height: 280,
-    backgroundColor: '#FF6B35',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
+    height: 220,
+    backgroundColor: "#FF6B35",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
   },
   heroOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(255, 107, 53, 0.9)',
+    backgroundColor: "rgba(255, 107, 53, 0.9)",
   },
   provinceSeal: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
-    backgroundColor: '#FFFFFF',
-    borderWidth: 4,
-    borderColor: '#FFFFFF',
+    width: 110,
+    height: 110,
+    borderRadius: 55,
+    backgroundColor: "#FFFFFF",
+    borderWidth: 3,
+    borderColor: "#FFFFFF",
     zIndex: 1,
   },
   provinceName: {
-    fontSize: 42,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    marginTop: 15,
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    fontSize: 34,
+    fontWeight: "bold",
+    color: "#FFFFFF",
+    marginTop: 12,
+    textShadowColor: "rgba(0, 0, 0, 0.3)",
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
     zIndex: 1,
   },
   englishName: {
     fontSize: 18,
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     marginTop: 5,
     opacity: 0.9,
     zIndex: 1,
   },
   mottoSection: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     marginHorizontal: 20,
     marginTop: -30,
     borderRadius: 20,
     padding: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
+    alignItems: "center",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 12,
@@ -193,126 +188,125 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   mottoBadge: {
-    backgroundColor: '#FF6B35',
+    backgroundColor: "#FF6B35",
     paddingHorizontal: 16,
     paddingVertical: 6,
     borderRadius: 20,
     marginBottom: 12,
   },
   mottoLabel: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   mottoText: {
     fontSize: 16,
-    color: '#333333',
-    textAlign: 'center',
+    color: "#333333",
+    textAlign: "center",
     lineHeight: 24,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   infoSection: {
-    paddingHorizontal: 20,
-    marginTop: 25,
+    paddingHorizontal: 16,
+    marginTop: 20,
   },
   sectionTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#333333',
-    marginBottom: 15,
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333333",
+    marginBottom: 12,
   },
   infoCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-    shadowColor: '#000',
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    padding: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 3,
   },
   infoIconContainer: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: '#FFF3E0',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 15,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#FFF3E0",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 12,
   },
   infoIcon: {
-    fontSize: 24,
+    fontSize: 20,
   },
   infoContent: {
     flex: 1,
   },
   infoTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#FF6B35',
+    fontWeight: "bold",
+    color: "#FF6B35",
     marginBottom: 4,
   },
   infoDescription: {
     fontSize: 14,
-    color: '#666666',
+    color: "#666666",
     lineHeight: 20,
   },
   highlightsSection: {
-    paddingHorizontal: 20,
-    marginTop: 25,
+    paddingHorizontal: 16,
+    marginTop: 20,
   },
   highlightGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   highlightItem: {
-    width: '48%',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 20,
-    alignItems: 'center',
-    marginBottom: 12,
-    shadowColor: '#000',
+    width: "48%",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    padding: 14,
+    alignItems: "center",
+    marginBottom: 10,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 3,
   },
   highlightEmoji: {
-    fontSize: 36,
-    marginBottom: 8,
+    fontSize: 28,
+    marginBottom: 6,
   },
   highlightText: {
     fontSize: 14,
-    fontWeight: '600',
-    color: '#333333',
-    textAlign: 'center',
+    fontWeight: "600",
+    color: "#333333",
+    textAlign: "center",
   },
   welcomeSection: {
-    marginHorizontal: 20,
+    marginHorizontal: 16,
     marginTop: 10,
-    backgroundColor: '#FF6B35',
-    borderRadius: 20,
-    padding: 24,
-    alignItems: 'center',
+    backgroundColor: "#FF6B35",
+    borderRadius: 16,
+    padding: 18,
+    alignItems: "center",
   },
   welcomeTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    marginBottom: 12,
-    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#FFFFFF",
+    marginBottom: 10,
+    textAlign: "center",
   },
   welcomeText: {
-    fontSize: 15,
-    color: '#FFFFFF',
-    lineHeight: 24,
-    textAlign: 'center',
+    fontSize: 14,
+    color: "#FFFFFF",
+    lineHeight: 22,
+    textAlign: "center",
     opacity: 0.95,
   },
 });
-
